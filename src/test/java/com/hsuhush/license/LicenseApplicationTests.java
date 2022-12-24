@@ -1,10 +1,10 @@
-package com.hsuhush.snp;
+package com.hsuhush.license;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SnpApplicationTests {
+class LicenseApplicationTests {
 
 	@Test
 	void contextLoads() {
