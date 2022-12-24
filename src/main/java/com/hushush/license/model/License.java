@@ -1,4 +1,4 @@
-package com.hsuhush.license.model;
+package com.hushush.license.model;
 
 import org.springframework.hateoas.RepresentationModel;
 

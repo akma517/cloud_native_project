@@ -1,4 +1,4 @@
-package com.hsuhush.license;
+package com.hushush.license;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

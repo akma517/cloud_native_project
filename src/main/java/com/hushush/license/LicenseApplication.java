@@ -1,4 +1,4 @@
-package com.hsuhush.license;
+package com.hushush.license;
 
 import java.util.Locale;
 

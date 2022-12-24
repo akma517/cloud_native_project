@@ -1,4 +1,4 @@
-package com.hsuhush.license.service;
+package com.hushush.license.service;
 
 import java.util.Locale;
 import java.util.Random;
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 
-import com.hsuhush.license.model.License;
+import com.hushush.license.model.License;
 
 
 @Service

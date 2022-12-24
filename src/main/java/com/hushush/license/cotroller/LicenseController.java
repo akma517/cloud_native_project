@@ -1,4 +1,4 @@
-package com.hsuhush.license.cotroller;
+package com.hushush.license.cotroller;
 
 import java.util.Locale;
 
@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hsuhush.license.model.License;
-import com.hsuhush.license.service.LicenseService;
+import com.hushush.license.model.License;
+import com.hushush.license.service.LicenseService;
+
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
