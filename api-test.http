@@ -2,6 +2,9 @@
 ### vsc에 REST Client 플러그인을 확장하여 사용
 ### 포스트맨과 같은 api 테스트 툴 없이도 손쉽게 검증 가능
 
+### Spring actuator Health check 엔드포인트 헬스 체크
+GET  http://localhost:8080/health
+
 ### POST 라이센스 생성
 POST http://localhost:8080/v1/organization/hushush/license
 Content-Type: application/json
