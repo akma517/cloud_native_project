@@ -4,11 +4,14 @@ import java.util.Locale;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 @SpringBootApplication
+@RefreshScope // config server에서 최신 프로퍼티를 생신받을 수 있도록 애플리케이션 구성 정보를 다시 읽게 만드는 /refresh 엔드포인트에 접근 가능
+			  // spring data에 사용되는 데이텊베이스 구성 정보는 이 애노테이션으로 갱신되지 않음, 사용자가 정의한 스프링 프로퍼티만 다시 로드
 public class LicenseApplication {
 
 	public static void main(String[] args) {

@@ -5,8 +5,9 @@ services:
     ports:
       - "8080:8080" # 시작한 도커 컨테이너의 포트 번호 정의 , 이 포트 번호는 외부에 노출
     environment:
-      - "SPRING_PROFILES_ACTIVE=dev" # 시작하는 도커 이미지에 환경변수 전달, 
+      SPRING_PROFILES_ACTIVE : dev # 시작하는 도커 이미지에 환경변수 전달, 
                                      # 이 경우 시작하는 도커 이미지에 SPRING_PROFILES_ACTIVE 환경변수를 설정
+      SPRING_CLOUD_CONFIG_URI : http://localhost:8071
     networks:
       backend:  # 서비스가 속한 네트워크 이름 지정
         aliases:

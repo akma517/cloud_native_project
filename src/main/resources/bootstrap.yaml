@@ -1,0 +1,11 @@
+# bootstrap.yaml을 사용할려면 Spring Cloud Starter Bootstrap 의존성을 추가해야 한다.
+
+spring:
+    application:
+        name: licensing-service # 스프링 클라우드 컨피그 클라이언트는 어떤 서비스가 검색되는지 알 수 있다.
+    profiles:
+        active: dev # 프로파일은 환경에 매핑
+    cloud:
+        config:
+            uri: http://localhost:8071   #스프링 클라우드 컨피그 서버의 위치를 지정
+
