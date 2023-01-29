@@ -7,5 +7,5 @@ spring:
         active: dev # 프로파일은 환경에 매핑
     cloud:
         config:
-            uri: http://localhost:8071   #스프링 클라우드 컨피그 서버의 위치를 지정
+            uri: http://configserver:8071   #스프링 클라우드 컨피그 서버의 위치를 지정
 

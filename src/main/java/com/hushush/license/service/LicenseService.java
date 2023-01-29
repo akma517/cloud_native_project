@@ -26,13 +26,12 @@ public class LicenseService {
 
     public License getLicense(String licenseId, String organizationId) {
 
-        License license = licenseRepository.findByOrganizationIdAndLicenses(organizationId, licenseId);
+        License license = licenseRepository.findByOrganizationIdAndLicenseId(organizationId, licenseId);
 
         if (null == license){
             throw new IllegalArgumentException(
                 String.format(
-                    messages.getMessage("license.search.error.message",null,null),
-                    licenseId, organizationId)
+                    messages.getMessage("license.search.error.message",null,null))
                 );
         }
 

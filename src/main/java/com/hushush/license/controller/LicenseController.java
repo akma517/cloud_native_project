@@ -30,27 +30,25 @@ public class LicenseController {
     public ResponseEntity<License> getLicense(
         @PathVariable("organizationId") String organizationId,
         @PathVariable("licenseId") String licenseId) {
-
-        License license = licenseService.getLicense(licenseId, organizationId);
         
+        License license = licenseService.getLicense(licenseId, organizationId);
+            
         // API 가이드를 위한 HATEOAS 설정
         // add()는 RepresentationModel 클래스 메서드, linkTo()메서드는 LicenseController 클래스를 검사해서 루트 매핑을 얻고
         // methodOn() 메서드는 대상 메서드에 더미 호출을 수행하여 메서드 매핑을 가져옴
         //컨트롤러 클래스에 대한 링크를 생성하여 응답 내용에 포함시켜 보낸다.
         license.add(
-            linkTo( methodOn(LicenseController.class).getLicense(licenseId, license.getLicenseId() )).withSelfRel(),
-            linkTo(methodOn(LicenseController.class).createLicense(licenseId, license, null )).withRel("createLicense"),
-            linkTo(methodOn(LicenseController.class).updateLicense(organizationId, license)).withRel("updateLicense"),
-            linkTo(methodOn(LicenseController.class).deleteLicense(organizationId, license.getLicenseId())).withRel("deleteLicense")
+            linkTo( methodOn(LicenseController.class).getLicense(organizationId, license.getLicenseId() )).withSelfRel(),
+            linkTo(methodOn(LicenseController.class).createLicense(license)).withRel("createLicense"),
+            linkTo(methodOn(LicenseController.class).updateLicense(license)).withRel("updateLicense"),
+            linkTo(methodOn(LicenseController.class).deleteLicense(license.getLicenseId())).withRel("deleteLicense")
         );
-
 
         return ResponseEntity.ok(license); // ResponseEntity는 상태 코드, 헤더, 바디를 포함한 모든 HTTP 응답을 나타냄(body에 License 객체와 200(ok) 상태코드를 반환)
     }
 
     @PutMapping 
     public ResponseEntity<License> updateLicense(
-        @PathVariable("organizationId") String organizationId,
         @RequestBody License request) {
 
         return ResponseEntity.ok(licenseService.updateLicense(request));
@@ -58,16 +56,13 @@ public class LicenseController {
 
     @PostMapping
     public ResponseEntity<License> createLicense(
-        @PathVariable("organizationId") String organizationId,
-        @RequestBody License request,
-        @RequestHeader(value = "Accept-Language", required=false) Locale locale) {
+        @RequestBody License request) {
 
         return ResponseEntity.ok(licenseService.createLicense(request));
     }
 
     @DeleteMapping(value="/{licenseId}")
     public ResponseEntity<String> deleteLicense(
-        @PathVariable("organizationId") String organizationId,
         @PathVariable("licenseId") String licenseId){
 
         return ResponseEntity.ok(licenseService.deleteLicense(licenseId));

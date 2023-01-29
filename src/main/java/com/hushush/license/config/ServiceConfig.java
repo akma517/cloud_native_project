@@ -10,7 +10,7 @@ import lombok.Setter;
  * ServiceConfig
  */
 @Configuration
-@ConfigurationProperties(prefix="hushush")
+@ConfigurationProperties(prefix="example")
 @Getter
 @Setter
 public class ServiceConfig {
